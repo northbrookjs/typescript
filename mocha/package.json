@@ -9,7 +9,7 @@
     "ts-node": "^1.2.3"
   },
   "scripts": {
-    "test": "echo 'I have no tests :(' && exit 1"
+    "test": "echo 'I have no tests :('"
   },
   "repository": {
     "type": "git",
