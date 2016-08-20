@@ -1,0 +1,44 @@
+{
+  "private": true,
+  "name": "northbrook-typescript",
+  "version": "0.0.0",
+  "description": "TypeScript Plugins for Northbrook",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/northbrookjs/typescript.git"
+  },
+  "author": "Tylor Steinberger <tlsteinberger167@gmail.com> (https://github.com/TylorS)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/northbrookjs/ttypescript/issues"
+  },
+  "homepage": "https://github.com/northbrookjs/typescript#readme",
+  "config": {
+    "ghooks": {
+      "commit-msg": "node ./node_modules/.bin/validate-commit-msg"
+    },
+    "validate-commit-msg": {
+      "types": [
+        "feat",
+        "fix",
+        "docs",
+        "style",
+        "refactor",
+        "perf",
+        "test",
+        "chore",
+        "revert",
+        "release"
+      ]
+    }
+  },
+  "scripts": {
+    "test": "northbrook elint",
+    "commit": "northbrook commit",
+    "release": "northbrook release"
+  },
+  "devDependencies": {
+    "northbrook": "^1.0.3",
+    "northbrook-eslint": "^1.0.1"
+  }
+}
