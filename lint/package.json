@@ -1,0 +1,29 @@
+{
+  "name": "northbrook-tslint",
+  "version": "0.0.0",
+  "description": "Northbrook plugin for tslint",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo 'terrible developer with no tests'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/northbrookjs/northbrook-typescript.git"
+  },
+  "keywords": [
+    "northbrook",
+    "plugin",
+    "typescript",
+    "lint",
+    "tslint"
+  ],
+  "author": "Tylor Steinberger <tlsteinberger167@gmail.com> (https://github.com/TylorS)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/northbrookjs/northbrook-typescript/issues"
+  },
+  "homepage": "https://github.com/northbrookjs/northbrook-typescript#readme",
+  "peerDependencies": {
+    "tslint": "*"
+  }
+}

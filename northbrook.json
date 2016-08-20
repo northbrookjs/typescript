@@ -3,7 +3,8 @@
   "packages": [
     "init",
     "create",
-    "build"
+    "build",
+    "lint"
   ],
   "plugins": [
     "northbrook-eslint"
