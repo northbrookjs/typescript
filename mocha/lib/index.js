@@ -23,23 +23,7 @@ function test (program, config, workingDir) {
 function testLikeABoss (config, workingDir, options) {
   isInitialized(config)
 
-  // get packages and ensure that the original packages array is not mutated
-  let packages = options && options.only
-    ? config.packages && config.packages.filter(p => p === options.only).slice()
-    : config.packages.slice()
-
-  // filter the packages if some are to be excluded
-  packages = Array.isArray(hasConfig(config).exclude)
-    ? packages.filter(packageName => hasConfig(config).exclude.indexOf(packageName) > -1)
-    : packages
-
-  const extensions = Array.isArray(hasConfig(config).extensions)
-    ? config['ts-mocha'].extensions
-    : ['.ts', '.tsx']
-
-  const testFolder = hasConfig(config) && typeof config['ts-mocha'].directory === 'string'
-    ? config['ts-mocha'].directory
-    : 'test/'
+  const packages = getConfiguration(config, options).packages
 
   if (packages.length === 0) {
     if (options.only) {
@@ -53,6 +37,9 @@ function testLikeABoss (config, workingDir, options) {
   function runTest (packageName, callBack) {
     const packageDir = join(workingDir, packageName)
     const tsconfig = findConfig.require('tsconfig.json', { home: false, cwd: packageDir })
+    const nbconfig = findConfig.require('northbrook.json', { home: false, cwd: packageDir })
+
+    const { testFolder, extensions } = getConfiguration(nbconfig)
 
     // this registers how to load .ts files
     require('ts-node').register(tsconfig)
@@ -112,4 +99,26 @@ function getAllTSFilesInDirectory (dir, extensions) {
 
 function hasConfig (config) {
   return config && config['ts-mocha']
+}
+
+function getConfiguration (config, options) {
+  // get packages and ensure that the original packages array is not mutated
+  let packages = options && options.only
+    ? config.packages && config.packages.filter(p => p === options.only).slice()
+    : config.packages.slice()
+
+  // filter the packages if some are to be excluded
+  packages = Array.isArray(hasConfig(config).exclude)
+    ? packages.filter(packageName => hasConfig(config).exclude.indexOf(packageName) > -1)
+    : packages
+
+  const extensions = Array.isArray(hasConfig(config).extensions)
+    ? config['ts-mocha'].extensions
+    : ['.ts', '.tsx']
+
+  const testFolder = hasConfig(config) && typeof config['ts-mocha'].directory === 'string'
+    ? config['ts-mocha'].directory
+    : 'test/'
+
+  return { packages, extensions, testFolder }
 }

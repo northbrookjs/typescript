@@ -8,7 +8,7 @@
 npm install --save-dev northbrook-ts-mocha
 ```
 
-# Configure it or not ?
+# Configure it
 
 ```js
 {
