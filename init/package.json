@@ -1,0 +1,30 @@
+{
+  "name": "northbrook-ts-init",
+  "version": "0.0.0",
+  "description": "Initialize a Northbrook monorepo for use with TS + Mocha + TSLint",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/northbrookjs/northbrook-typescript.git"
+  },
+  "keywords": [
+    "northbrook",
+    "plugin",
+    "typescript",
+    "init"
+  ],
+  "author": "Tylor Steinberger <tlsteinberger167@gmail.com> (https://github.com/TylorS)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/northbrookjs/northbrook-typescript/issues"
+  },
+  "homepage": "https://github.com/northbrookjs/northbrook-typescript#readme",
+  "dependencies": {
+    "find-config": "^1.0.0",
+    "khaos": "^0.9.3",
+    "prompt-for": "^1.1.2"
+  }
+}
