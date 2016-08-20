@@ -9,3 +9,10 @@ source of many bug fixes and great polish to the system Northbrook already provi
 
 To find more information about each plugin take a look at the README in each
 plugin directory.
+
+
+## Caveat
+
+None of the plugins depend upon TypeScript directly, and the default
+configurations are extremely biased to work only with TypeScript 2.0, but do not
+explicitly depend upon it, so you must install one yourself.
