@@ -5,7 +5,8 @@
     "create",
     "build",
     "lint",
-    "mocha"
+    "mocha",
+    "preset-ts-mocha"
   ],
   "plugins": [
     "northbrook-eslint"
