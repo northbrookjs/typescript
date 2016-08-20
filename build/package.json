@@ -1,6 +1,6 @@
 {
   "name": "northbrook-ts-build",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Northbrook plugin to build with tsc",
   "main": "lib/index.js",
   "scripts": {
