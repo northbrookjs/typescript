@@ -24,9 +24,22 @@ function testLikeABoss (config, workingDir, options) {
   isInitialized(config)
 
   // get packages and ensure that the original packages array is not mutated
-  const packages = options && options.only
+  let packages = options && options.only
     ? config.packages && config.packages.filter(p => p === options.only).slice()
     : config.packages.slice()
+
+  // filter the packages if some are to be excluded
+  packages = Array.isArray(hasConfig(config).exclude)
+    ? packages.filter(packageName => hasConfig(config).exclude.indexOf(packageName) > -1)
+    : packages
+
+  const extensions = Array.isArray(hasConfig(config).extensions)
+    ? config['ts-mocha'].extensions
+    : ['.ts', '.tsx']
+
+  const testFolder = hasConfig(config) && typeof config['ts-mocha'].directory === 'string'
+    ? config['ts-mocha'].directory
+    : 'test/'
 
   if (packages.length === 0) {
     if (options.only) {
@@ -44,8 +57,8 @@ function testLikeABoss (config, workingDir, options) {
     // this registers how to load .ts files
     require('ts-node').register(tsconfig)
 
-    const testDir = join(packageDir, 'test/')
-    return runTests(testDir, callBack)
+    const testDir = join(packageDir, testFolder)
+    return runTests(testDir, extensions, callBack)
   }
 
   function callBack (failures) {
@@ -63,8 +76,8 @@ function testLikeABoss (config, workingDir, options) {
   runTest(packageName, callBack)
 }
 
-function runTests (testDir, callBack) {
-  const files = getAllTSFilesInDirectory(testDir)
+function runTests (testDir, extensions, callBack) {
+  const files = getAllTSFilesInDirectory(testDir, extensions)
 
   const mocha = new Mocha()
 
@@ -77,19 +90,26 @@ function runTests (testDir, callBack) {
   })
 }
 
-function getAllTSFilesInDirectory (dir) {
+function getAllTSFilesInDirectory (dir, extensions) {
   let files = []
-  readdirSync(dir).filter(function (file) {
+
+  readdirSync(dir).forEach(function (file) {
     const abspath = join(dir, file)
 
     if (isDirectory(abspath)) {
       files.push(...getAllTSFilesInDirectory(abspath))
-    }
-
-    if (file.substr(-3) === '.ts' || file.substr(-4) === '.tsx') {
-      return files.push(abspath)
+    } else {
+      extensions.forEach(function (ext) {
+        if (file.endsWith(ext)) {
+          files.push(abspath)
+        }
+      })
     }
   })
 
   return files
+}
+
+function hasConfig (config) {
+  return config && config['ts-mocha']
 }
