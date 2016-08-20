@@ -1,6 +1,10 @@
 {
   "version": "1.0.0",
-  "packages": ["init"],
+  "packages": [
+    "init",
+    "create",
+    "build"
+  ],
   "plugins": [
     "northbrook-eslint"
   ],
