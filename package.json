@@ -38,7 +38,7 @@
     "release": "northbrook release"
   },
   "devDependencies": {
-    "northbrook": "^1.0.3",
+    "northbrook": "^1.1.2",
     "northbrook-eslint": "^1.0.1"
   }
 }
