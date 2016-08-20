@@ -10,6 +10,13 @@ source of many bug fixes and great polish to the system Northbrook already provi
 To find more information about each plugin take a look at the README in each
 plugin directory.
 
+## Plugins
+
+- `build` - Build your packages with Typescript and `tsc`
+- `create` - Creates a new package ready to be used with TypeScript
+- `init` - Initializes your Northbrook project to be configured for TypeScript
+- `lint` - Lints your packages with TSLint
+- `mocha` - Test your packages with mocha + ts-node
 
 ## Caveat
 
