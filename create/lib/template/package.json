@@ -1,4 +1,5 @@
 {
+  "private": "{{ private }}",
   "name": "{{ packageName }}",
   "version": "0.0.0",
   "description": "{{ description }}",

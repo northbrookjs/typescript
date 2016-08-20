@@ -53,8 +53,13 @@ function generateAnswers (packageName, promptAnswers, workingDir) {
   const buildCmd = `${bin}/northbrook build --only ${packageName}`
 
   return Object.assign({}, promptAnswers, {
-    author, gitUrl, bugsUrl, homepage,
-    lintCmd, testUnitCmd, buildCmd
+    author,
+    gitUrl,
+    bugsUrl,
+    homepage,
+    lintCmd,
+    testUnitCmd,
+    buildCmd
   })
 }
 
@@ -88,7 +93,8 @@ function readFiles (khaos, callback) {
 const schemaForPrompt =
   {
     'packageName': 'string',
-    'description': 'string'
+    'description': 'string',
+    'private': 'boolean'
   }
 
 function promptForInformation (callback) {
