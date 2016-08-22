@@ -28,7 +28,7 @@
     "northbrook-ts-build": "^1.0.0",
     "northbrook-ts-create": "^1.0.0",
     "northbrook-ts-init": "0.0.1",
-    "northbrook-ts-mocha": "^1.0.0",
+    "northbrook-ts-mocha": "^1.3.0",
     "northbrook-tslint": "^1.0.0"
   },
   "peerDependencies": {
