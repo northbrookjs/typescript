@@ -2,6 +2,7 @@ const { join } = require('path')
 const { readdirSync } = require('fs')
 const { isDirectory, isInitialized, logSeparator } = require('northbrook/lib/util')
 const findConfig = require('find-config')
+const addPath = require('app-module-path').addPath
 
 const Mocha = require('mocha')
 
@@ -36,6 +37,7 @@ function testLikeABoss (config, workingDir, options) {
   // provide output which is actually useful.
   function runTest (packageName, callBack) {
     const packageDir = join(workingDir, packageName)
+    addPath(join(packageDir, 'node_modules'))
     const tsconfig = findConfig.require('tsconfig.json', { home: false, cwd: packageDir })
     const nbconfig = findConfig.require('northbrook.json', { home: false, cwd: packageDir })
 
