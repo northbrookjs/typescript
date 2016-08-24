@@ -30,7 +30,7 @@ function lintLikeABoss (config, workingDir, options) {
     const packageDir = join(workingDir, packageName)
     const srcDir = join(packageDir, 'src/')
     const pkg = require(join(packageDir, 'package.json'))
-    const name = pkg.name
+    const name = pkg && pkg.name || packageName
 
     const cmd = `tslint -c tslint.json ${packageName}/src/*.ts`
 

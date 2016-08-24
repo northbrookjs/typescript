@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/northbrookjs/northbrook-typescript#readme",
   "peerDependencies": {
+    "northbrook": "^2.x.x",
     "tslint": "*"
   }
 }

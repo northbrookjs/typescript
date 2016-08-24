@@ -30,6 +30,6 @@
     "prompt-for": "^1.1.2"
   },
   "peerDependencies": {
-    "northbrook": "^1.0.0"
+    "northbrook": "^2.x.x"
   }
 }

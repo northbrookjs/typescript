@@ -110,11 +110,11 @@ function getConfiguration (config, options) {
     : config.packages.slice()
 
   // filter the packages if some are to be excluded
-  packages = Array.isArray(hasConfig(config).exclude)
+  packages = hasConfig(config) && Array.isArray(hasConfig(config).exclude)
     ? packages.filter(packageName => hasConfig(config).exclude.indexOf(packageName) === -1)
     : packages
 
-  const extensions = Array.isArray(hasConfig(config).extensions)
+  const extensions = hasConfig(config) && Array.isArray(hasConfig(config).extensions)
     ? config['ts-mocha'].extensions
     : ['.ts', '.tsx']
 

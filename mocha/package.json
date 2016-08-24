@@ -3,12 +3,6 @@
   "version": "1.3.0",
   "description": "Northbrook plugin for testing with ts-node + mocha",
   "main": "lib/index.js",
-  "dependencies": {
-    "app-module-path": "^1.1.0",
-    "find-config": "^1.0.0",
-    "mocha": "^3.0.2",
-    "ts-node": "^1.2.3"
-  },
   "scripts": {
     "test": "echo 'I have no tests :('"
   },
@@ -29,5 +23,14 @@
   "bugs": {
     "url": "https://github.com/northbrookjs/northbrook-typescript/issues"
   },
-  "homepage": "https://github.com/northbrookjs/northbrook-typescript#readme"
+  "homepage": "https://github.com/northbrookjs/northbrook-typescript#readme",
+  "dependencies": {
+    "app-module-path": "^1.1.0",
+    "find-config": "^1.0.0",
+    "mocha": "^3.0.2",
+    "ts-node": "^1.2.3"
+  },
+  "peerDependencies": {
+    "northbrook": "^2.x.x"
+  }
 }

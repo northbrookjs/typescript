@@ -28,6 +28,7 @@
     "find-config": "^1.0.0"
   },
   "peerDependencies": {
+    "northbrook": "2.x.x",
     "typescript": "*"
   }
 }
