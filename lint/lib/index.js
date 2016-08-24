@@ -1,6 +1,6 @@
 const { join } = require('path')
 const { readdirSync } = require('fs')
-const { exec, isDirectory, logSeparator, isInitialized } = require('northbrook/lib/util')
+const { exec, isDirectory, separator, isInitialized } = require('northbrook/lib/util')
 
 exports.plugin = lint
 
@@ -29,15 +29,25 @@ function lintLikeABoss (config, workingDir, options) {
   packages.forEach(function (packageName) {
     const packageDir = join(workingDir, packageName)
     const srcDir = join(packageDir, 'src/')
+    const pkg = require(join(packageDir, 'package.json'))
+    const name = pkg.name
 
     const cmd = `tslint -c tslint.json ${packageName}/src/*.ts`
 
     const lintCmd = containsDirectories(srcDir)
       ? `${cmd} ${packageName}/src/**/*ts` : cmd
 
-    exec(lintCmd, { silent: true, cwd: workingDir }, () => logSeparator(packageName))
-      .then(() => console.log('    Running TSLint was successful!\n'))
-      .catch(([out]) => console.log(modOutput(out)) || logSeparator())
+    exec(lintCmd, { silent: true, cwd: workingDir })
+      .then(() => {
+        console.log(separator(name))
+        console.log('    Running TSLint was successful!\n')
+        console.log(separator())
+      })
+      .catch(({out}) => {
+        console.log(separator(name))
+        console.log(modOutput(out))
+        console.log(separator())
+      })
   })
 }
 
