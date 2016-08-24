@@ -1,6 +1,6 @@
 const { join } = require('path')
 const { readdirSync } = require('fs')
-const { isDirectory, isInitialized, logSeparator } = require('northbrook/lib/util')
+const { isDirectory, isInitialized, separator } = require('northbrook/lib/util')
 const findConfig = require('find-config')
 const addPath = require('app-module-path').addPath
 
@@ -51,17 +51,17 @@ function testLikeABoss (config, workingDir, options) {
   }
 
   function callBack (failures) {
-    logSeparator()
+    console.log(separator())
 
     if (packages.length === 0) return
 
     const packageName = packages.shift()
-    logSeparator(packageName)
+    console.log(separator(packageName))
     runTest(packageName, callBack)
   }
 
   const packageName = packages.shift()
-  logSeparator(packageName)
+  console.log(separator(packageName))
   runTest(packageName, callBack)
 }
 
