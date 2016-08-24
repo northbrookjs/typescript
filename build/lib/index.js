@@ -1,6 +1,6 @@
-const { join } = require('path')
+const { join, relative } = require('path')
 const findConfig = require('find-config')
-const { exec, getRelative, logSeparator, isInitialized } = require('northbrook/lib/util')
+const { exec, separator, isInitialized } = require('northbrook/lib/util')
 
 exports.plugin = build
 
@@ -15,9 +15,7 @@ function build (program, config, workingDir) {
 function buildLikeABoss (config, workingDir, options) {
   isInitialized(config)
 
-  const packages = options.only
-    ? config.packages.filter(p => p === options.only)
-    : config.packages
+  const { packages } = getConfiguration(config, options)
 
   packages.forEach(function (packageName) {
     const packageDir = join(workingDir, packageName)
@@ -29,8 +27,8 @@ function buildLikeABoss (config, workingDir, options) {
     const commonjs = commonjsOptions(tsconfig)
     const es2015 = es2015Options(tsconfig)
 
-    const relative = getRelative(packageName)
-    const bin = `${relative}/node_modules/.bin`
+    const relativePath = relative(packageDir, workingDir)
+    const bin = `${relativePath}/node_modules/.bin`
 
     const cmd = config => `${bin}/tsc ${config} ${files}`
 
@@ -38,10 +36,14 @@ function buildLikeABoss (config, workingDir, options) {
       exec(cmd(commonjs), { silent: true, cwd: packageDir }),
       exec(cmd(es2015), { silent: true, cwd: packageDir })
     ]).then(() => {
-      logSeparator(packageName)
+      console.log(separator(packageName))
       console.log(`    Successfully completed build of ${packageName}`)
-      logSeparator()
-    }).catch(err => logSeparator(packageName) || console.error(err) || logSeparator())
+      console.log(separator())
+    }).catch(err => {
+      console.log(separator(packageName))
+      console.error(err)
+      console.log(separator())
+    })
   })
 }
 
@@ -100,4 +102,16 @@ function buildOptions (compilerOptions) {
     }
   }
   return options
+}
+
+function getConfiguration (config, options) {
+  let packages = options.only
+    ? config.packages.filter(p => p === options.only)
+    : config.packages
+
+  packages = config && config['ts-build'] && Array.isArray(config['ts-build'].exclude)
+    ? packages.filter(packageName => config['ts-build'].exclude.indexOf(packageName) > -1)
+    : packages
+
+  return { packages }
 }
