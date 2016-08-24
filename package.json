@@ -33,12 +33,12 @@
     }
   },
   "scripts": {
-    "test": "northbrook elint",
+    "test": "northbrook eslint",
     "commit": "northbrook commit",
     "release": "northbrook release"
   },
   "devDependencies": {
-    "northbrook": "^1.2.0",
-    "northbrook-eslint": "^1.0.1"
+    "northbrook": "^2.0.11",
+    "northbrook-eslint": "^1.1.0"
   }
 }
