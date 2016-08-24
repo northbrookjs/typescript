@@ -1,11 +1,11 @@
-const { join } = require('path')
+const { join, relative } = require('path')
 const { writeFile } = require('fs')
 
 const Khaos = require('khaos')
 const beautify = require('js-beautify').js_beautify
 const prompt = require('prompt-for')
 
-const { isDirectory, getRelative } = require('northbrook/lib/util')
+const { isDirectory } = require('northbrook/lib/util')
 
 exports.plugin = create
 
@@ -44,8 +44,8 @@ function generateAnswers (packageName, promptAnswers, workingDir) {
     homepage
   } = require(join(workingDir, 'package.json'))
 
-  const relative = getRelative(packageName)
-  const bin = `${relative}/node_modules/.bin`
+  const relativePath = relative(join(workingDir, packageName), workingDir)
+  const bin = `${relativePath}/node_modules/.bin`
 
   // creates commands that allow running these commands when in a directory
   const lintCmd = `${bin}/northbrook lint --only ${packageName}`
