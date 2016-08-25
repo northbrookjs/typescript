@@ -25,6 +25,8 @@
   },
   "homepage": "https://github.com/northbrookjs/northbrook-typescript#readme",
   "dependencies": {
+    "@types/node": "*",
+    "@types/mocha": "*",
     "app-module-path": "^1.1.0",
     "find-config": "^1.0.0",
     "mocha": "^3.0.2",

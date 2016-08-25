@@ -11,6 +11,7 @@ npm install --save-dev @northbrook/ts-mocha
 # Configure it
 
 ```js
+// northbrook.json
 {
   "plugins": [
     "ts-mocha" // add to registered plugins
@@ -23,6 +24,17 @@ npm install --save-dev @northbrook/ts-mocha
     directory: "src/" a place to find your test,
     // default: ['.ts', '.tsx']
     extensions: ['.spec.ts'] // extensions to match
+  }
+}
+
+// tsconfig.json - TypeScript 2.x
+{
+  "compilerOptions": {
+    ...
+    "types": [
+      "node",
+      "mocha"
+    ]
   }
 }
 ```
