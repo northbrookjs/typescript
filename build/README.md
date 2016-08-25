@@ -7,7 +7,7 @@ your `northbrook.json`.
 ## Get it
 
 ```sh
-npm install --save-dev northbrook-ts-build
+npm install --save-dev @northbrook/ts-build
 ```
 
 And in your `northbrook.json`
