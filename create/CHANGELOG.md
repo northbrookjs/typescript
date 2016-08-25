@@ -1,3 +1,12 @@
+# v1.3.0 (2016-08-25)
+---
+
+
+## Features
+
+    - feat(ts-create): make a scoped package [cc3e7ed4](https://github.com/northbrookjs/northbrook-typescript/commits/cc3e7ed41f3473c909a0b01d30daf5bd9958d873)
+
+
 # v1.2.0 (2016-08-24)
 ---
 
