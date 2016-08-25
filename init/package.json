@@ -1,5 +1,5 @@
 {
-  "name": "northbrook-ts-init",
+  "name": "@northbrook/ts-init",
   "version": "0.1.0",
   "description": "Initialize a Northbrook monorepo for use with TS + Mocha + TSLint",
   "main": "lib/index.js",

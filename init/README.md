@@ -7,7 +7,7 @@ This package helps setup a new package which is designed to be managed with Type
 # Get it
 
 ```sh
-npm install --save-dev northbrook-ts-init
+npm install --save-dev @northbrook/ts-init
 ```
 
 # Use it
