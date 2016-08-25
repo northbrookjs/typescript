@@ -7,7 +7,7 @@ Designed to work out-of-the-box with ts-init, ts-mocha, ts-tsc, and ts-tslint.
 ## Installation
 
 ```sh
-npm install --save-dev northbrook-ts-create
+npm install --save-dev @northbrook/ts-create
 ```
 
 add me to your northbrook.json
