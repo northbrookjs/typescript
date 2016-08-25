@@ -1,3 +1,12 @@
+# v1.5.1 (2016-08-25)
+---
+
+
+## Bug Fixes
+
+    - fix(ts-mocha): add @types/node and @types/mocha to dependencies [de730814](https://github.com/northbrookjs/northbrook-typescript/commits/de730814c84d480184a7f851659991fc338b7f40)
+
+
 # v1.5.0 (2016-08-25)
 ---
 
