@@ -1,3 +1,12 @@
+# v1.2.0 (2016-08-25)
+---
+
+
+## Features
+
+    - feat(preset-ts-mocha): use scoped package [94e99ed8](https://github.com/northbrookjs/northbrook-typescript/commits/94e99ed893c44631c4980b3e3c2862bfc8086597)
+
+
 # v1.1.0 (2016-08-25)
 ---
 
