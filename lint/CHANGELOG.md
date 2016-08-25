@@ -1,3 +1,12 @@
+# v1.2.0 (2016-08-25)
+---
+
+
+## Features
+
+    - feat(tslint): make a scoped package [0c16cd0d](https://github.com/northbrookjs/northbrook-typescript/commits/0c16cd0d0b19f9c0f7c5a4d58071d49371ec9c5f)
+
+
 # v1.1.0 (2016-08-24)
 ---
 
