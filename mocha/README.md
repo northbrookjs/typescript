@@ -5,7 +5,7 @@
 # Get it
 
 ```sh
-npm install --save-dev northbrook-ts-mocha
+npm install --save-dev @northbrook/ts-mocha
 ```
 
 # Configure it

@@ -1,5 +1,5 @@
 {
-  "name": "northbrook-ts-mocha",
+  "name": "@northbrook/ts-mocha",
   "version": "1.4.0",
   "description": "Northbrook plugin for testing with ts-node + mocha",
   "main": "lib/index.js",
