@@ -4,8 +4,8 @@
 
 ## Bug Fixes
 
-    - fix(ts-init): test auto-deployment [29aed4a4](https://github.com/northbrookjs/northbrook-typescript/commits/29aed4a434264957495bf43aa3a7eba0054b37fd)
-    - fix(ts-init): fix deploy script [eac203f7](https://github.com/northbrookjs/northbrook-typescript/commits/eac203f7e1c1c393178c5381c2258096393cf259)
+- fix(ts-init): test auto-deployment [29aed4a4](https://github.com/northbrookjs/northbrook-typescript/commits/29aed4a434264957495bf43aa3a7eba0054b37fd)
+- fix(ts-init): fix deploy script [eac203f7](https://github.com/northbrookjs/northbrook-typescript/commits/eac203f7e1c1c393178c5381c2258096393cf259)
 
 
 # v0.4.0 (2016-08-25)
