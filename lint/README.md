@@ -5,7 +5,7 @@
 ## Get
 
 ```sh
-npm install --save-dev northbrook-tslint tslint
+npm install --save-dev @northbrook/tslint tslint
 ```
 
 This only has a peerDependency upon tslint so you can specify the version
