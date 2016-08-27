@@ -1,3 +1,12 @@
+# v1.2.1 (2016-08-26)
+---
+
+
+## Bug Fixes
+
+- fix(preset-ts-mocha): fix imports [74bee800](https://github.com/northbrookjs/northbrook-typescript/commits/74bee8004ab15556f06baf39766c194aa46b87fe)
+
+
 # v1.2.0 (2016-08-25)
 ---
 
