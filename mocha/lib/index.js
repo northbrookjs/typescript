@@ -56,13 +56,21 @@ function testLikeABoss (config, workingDir, options) {
     if (packages.length === 0) return
 
     const packageName = packages.shift()
-    console.log(separator(packageName))
+    const name = getName(workingDir, packageName)
+    console.log(separator(name))
     runTest(packageName, callBack)
   }
 
   const packageName = packages.shift()
-  console.log(separator(packageName))
+  const name = getName(workingDir, packageName)
+  console.log(separator(name))
   runTest(packageName, callBack)
+}
+
+function getName (workingDir, packageName) {
+  const packageDir = join(workingDir, packageName)
+  const pkg = findConfig.require('package.json', { home: false, cwd: packageDir })
+  return pkg.name
 }
 
 function runTests (testDir, extensions, callBack) {
@@ -80,13 +88,19 @@ function runTests (testDir, extensions, callBack) {
 }
 
 function getAllTSFilesInDirectory (dir, extensions) {
-  let files = []
+  const files = []
 
-  readdirSync(dir).forEach(function (file) {
+  const contents = readdirSync(dir)
+
+  if (!contents) {
+    return files
+  }
+
+  contents.forEach(function (file) {
     const abspath = join(dir, file)
 
     if (isDirectory(abspath)) {
-      files.push(...getAllTSFilesInDirectory(abspath))
+      files.push(...getAllTSFilesInDirectory(abspath, extensions))
     } else {
       extensions.forEach(function (ext) {
         if (file.endsWith(ext)) {
