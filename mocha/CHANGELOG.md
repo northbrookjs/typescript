@@ -1,3 +1,12 @@
+# v1.5.2 (2016-08-27)
+---
+
+
+## Bug Fixes
+
+- fix(ts-mocha): fix error when there are nested directories in a test folder [2b485e87](https://github.com/northbrookjs/northbrook-typescript/commits/2b485e876a7c73146fe92328a5513937bb8056cc)
+
+
 # v1.5.1 (2016-08-25)
 ---
 
