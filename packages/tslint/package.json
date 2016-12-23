@@ -1,0 +1,32 @@
+{
+  "name": "@northbrook/tslint",
+  "version": "1.2.0",
+  "description": "Lint TypeScript files with TSLint",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "../../node_modules/.bin/northbrook --only @northbrook/tslint mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/northbrookjs/typescript.git"
+  },
+  "keywords": [
+    "tslint",
+    "typescript",
+    "northbrook",
+    "northbrookjs",
+    "plugin",
+    "northbrook-plugin"
+  ],
+  "author": "Tylor Steinberger <tlsteinberger16@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/northbrookjs/typescript/issues"
+  },
+  "homepage": "https://github.com/northbrookjs/typescript#readme",
+  "dependencies": {
+    "northbrook": "^4.1.4",
+    "tslint": "^4.2.0",
+    "typescript": "^2.1.4"
+  }
+}
