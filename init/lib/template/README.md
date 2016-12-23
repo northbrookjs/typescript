@@ -1,5 +1,0 @@
-# {{ packageName }}
-
-> {{ description }}
-
-# **API**
