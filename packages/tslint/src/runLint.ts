@@ -11,6 +11,7 @@ const defaultPatterns: Array<RegExp | string> =
   [
     /\.ts/,
     '!lib/**/*.ts',
+    '!lib.es2015/**/*.ts',
     '!**/*.skip.ts',
   ];
 
