@@ -14,11 +14,12 @@
   },
   "homepage": "https://github.com/northbrookjs/typescript#readme",
   "scripts": {
-    "test": "northbrook mocha",
+    "test": "northbrook mocha && northbrook tslint",
     "commit": "northbrook commit",
     "release": "northbrook release"
   },
   "devDependencies": {
+    "@motorcycle/tslint": "^1.3.0",
     "@northbrook/mocha": "^2.1.0",
     "northbrook": "^4.1.4",
     "tslint": "^4.2.0",
