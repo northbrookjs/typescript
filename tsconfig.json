@@ -13,15 +13,10 @@
     "sourceMap": true,
     "noUnusedParameters": true,
     "strictNullChecks": true,
-    "outDir": ".tmp",
     "types": [
-      "findup-sync",
-      "minimist",
-      "mkdirp",
+      "glob-expand",
       "mocha",
-      "node",
-      "ramda",
-      "semver"
+      "node"
     ]
   },
   "include": [
