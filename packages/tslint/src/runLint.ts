@@ -10,7 +10,8 @@ import * as expand from 'glob-expand';
 const defaultPatterns: Array<RegExp | string> =
   [
     /\.ts/,
-    '!node_modules/**/*.*',
+    '!lib/**/*.ts',
+    '!**/*.skip.ts',
   ];
 
 export function runLint (
@@ -26,23 +27,25 @@ export function runLint (
   else
     tslintConfig = loadConfigurationFromPath(tslintConfig);
 
-  const patterns = config.tslint && config.tslint.patterns || defaultPatterns;
+  const patterns =
+    (config as any).tslint && (config as any).tslint.patterns || defaultPatterns;
 
   const filesToLint: Array<string> =
-    expand({ filter: 'isFile', cwd: path }, patterns);
+    expand({ filter: 'isFile', cwd: path }, patterns.concat('!node_modules/**/*.*'));
 
-  const program = Linter.createProgram(findTsConfig(path, directory), path);
-  const linter = new Linter({ fix: false }, program);
+  const linter = new Linter({ fix: false });
 
   return new Promise((resolve, reject) => {
 
     io.stdout.write(`Running TSLint for ${name}...` + EOL);
 
     filesToLint.forEach(function (filePath: string) {
-      const fileContents: string =
-        readFileSync(join(path, filePath)).toString();
+      const absoluteFilePath = join(path, filePath);
 
-      linter.lint(join(path, filePath), fileContents, tslintConfig);
+      const fileContents: string =
+        readFileSync(absoluteFilePath).toString();
+
+      linter.lint(absoluteFilePath, fileContents, tslintConfig);
     });
 
     const result = linter.getResult();
@@ -59,24 +62,7 @@ export function runLint (
   });
 }
 
-const TSCONFIG = `tsconfig.json`;
 const TSLINT = `tslint.json`;
-
-function findTsConfig(
-  path: string,
-  directory: string): any
-{
-  const pathTsConfig = join(path, TSCONFIG);
-  const projectTsConfig = join(directory, TSCONFIG);
-
-  if (isFile(pathTsConfig))
-    return pathTsConfig;
-
-  if (isFile(projectTsConfig))
-    return projectTsConfig;
-
-  return join(__dirname, 'defaultTsConfig.json');
-}
 
 function findTslintConfig(
   path: string,

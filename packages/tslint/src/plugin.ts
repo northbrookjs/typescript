@@ -7,5 +7,8 @@ export const plugin: Command =
 
 each(plugin, runLint)
   .catch((result: LintResult) => {
-    console.error(result.output);
+    if (result.output)
+      console.error(result.output);
+
+    console.error(result);
   });

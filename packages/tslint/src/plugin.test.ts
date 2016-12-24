@@ -17,6 +17,12 @@ describe('tslint plugin', function () {
 
     const config = {
       packages: [ join(packageDir, '__test__') ],
+
+      tslint: {
+        patterns: [
+          /.ts/,
+        ],
+      },
     };
 
     const args: Array<string> = [];
@@ -31,7 +37,7 @@ describe('tslint plugin', function () {
 
       const failingTestPath = (result.failures[0] as any).sourceFile.path;
 
-      assert.strictEqual(failingTestPath, join(packageDir, '__test__/failing.ts'));
+      assert.strictEqual(failingTestPath, join(packageDir, '__test__/failing.skip.ts'));
 
       assert.strictEqual(result.failures[0].getFailure(),
         'The class method \'foo\' must be marked either \'private\', \'public\', or \'protected\'');

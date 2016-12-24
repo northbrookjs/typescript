@@ -1,6 +1,5 @@
-/* tslint:disable:no-unused-variable */
-import { NorthbrookConfig } from 'northbrook';
-/* tslint:enable:no-unused-variable*/
+// tslint:disable-next-line
+import { NorthbrookConfig } from 'northbrook/types/northbrook';
 
 declare module 'northbrook/types/northbrook' {
   export interface NorthbrookConfig {
