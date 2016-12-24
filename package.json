@@ -14,6 +14,7 @@
   },
   "homepage": "https://github.com/northbrookjs/typescript#readme",
   "scripts": {
+    "build": "northbrook tsc",
     "test": "northbrook mocha && northbrook tslint",
     "commit": "northbrook commit",
     "release": "northbrook release"
