@@ -1,0 +1,32 @@
+{
+  "name": "@northbrook/tsc",
+  "version": "0.0.0",
+  "description": "Compile your Northbrook packages with TypeScript",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "scripts": {
+    "test": "../../node_modules/.bin/northbrook --only @northbrook/tsc mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/northbrookjs/typescript.git"
+  },
+  "keywords": [
+    "typescript",
+    "northbrook",
+    "northbrook-plugin"
+  ],
+  "author": "Tylor Steinberger <tlsteinberger167@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/northbrookjs/typescript/issues"
+  },
+  "homepage": "https://github.com/northbrookjs/typescript#readme",
+  "dependencies": {
+    "@types/glob-expand": "0.0.30",
+    "glob-expand": "^0.2.1",
+    "northbrook": "^4.1.4",
+    "simple-spinner": "0.0.5",
+    "typescript": "^2.1.4"
+  }
+}
