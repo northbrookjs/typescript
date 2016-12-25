@@ -9,5 +9,11 @@
     "sourceMap": true,
     "noUnusedParameters": true,
     "strictNullChecks": true
-  }
+  },
+
+  "include": [
+    "northbrook.ts",
+    "packages/tsc/src/**/*.ts",
+    "packages/tslint/src/**/*.ts"
+  ]
 }
