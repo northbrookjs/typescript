@@ -2,21 +2,22 @@
 
 > The power of Northbrook and TypeScript together in one place
 
-This is a home to a number of official TypeScript plugins for Northbrook.
-
-This is the first monorepo to make use of northbrook itself, and will be the
-source of many bug fixes and great polish to the system Northbrook already provides.
+A collection of TypeScript-specific plugins for Northbrook.
 
 ## Plugins
 
-- [TypeScript Compiler](#tsc)
-- [TypeScript Linter](#tslint)
+- [TypeScript Compiler](#northbrooktsc---build-with-the-typescript-compiler)
+- [TypeScript Linter](#northbrooktslint---lint-your-typescript-files)
 
 
-### <a href="#tsc"></a> `@northbrook/tsc` - Build with the TypeScript Compiler
+### `@northbrook/tsc` - Build with the TypeScript Compiler
 
 Using the TypeScript compiler API, this plugin will help you to build all of
 your packages using the TypeScript compiler.
+
+```sh
+npm install --save-dev @northbrook/tsc
+```
 
 ##### Northbrook Configuration Options
 
@@ -64,9 +65,13 @@ const defaultPatterns: Array<RegExp | string> =
   ];
 ```
 
-### <a href="#tslint"></a>`@northbrook/tslint` - Lint your TypeScript files
+### `@northbrook/tslint` - Lint your TypeScript files
 
 Lint your TypeScript files with TSLint.
+
+```sh
+npm install --save-dev @northbrook/tslint
+```
 
 ##### Northbrook Configuration Options
 
@@ -74,7 +79,7 @@ Lint your TypeScript files with TSLint.
 // northbrook.ts
 
 export = {
-  plugins: ['@northbrook/tslint'],
+  plugins: [ '@northbrook/tslint' ],
 
   // this object is 100% options
   tslint: {
