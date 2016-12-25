@@ -1,6 +1,6 @@
 {
   "name": "@northbrook/tslint",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Lint TypeScript files with TSLint",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
