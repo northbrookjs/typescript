@@ -17,6 +17,7 @@
     "build": "northbrook tsc",
     "test": "northbrook mocha && northbrook tslint",
     "commit": "northbrook commit",
+    "prerelease": "northbrook tsc",
     "release": "northbrook release"
   },
   "devDependencies": {
