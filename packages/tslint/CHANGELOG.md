@@ -1,3 +1,10 @@
+# 2.1.3 (2016-12-24)
+---
+
+## Bug Fixes
+
+- fix(tslint): remove unused parts of default config [d36581ce](https://github.com/northbrookjs/typescript/commits/d36581ce73678657edcde808d896331b4e456c28)
+
 # 2.1.2 (2016-12-24)
 ---
 

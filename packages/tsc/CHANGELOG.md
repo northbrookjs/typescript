@@ -1,3 +1,10 @@
+# 1.0.2 (2016-12-24)
+---
+
+## Bug Fixes
+
+- fix(tsc): remove the build directory before building new code [a8ea74ba](https://github.com/northbrookjs/typescript/commits/a8ea74ba1a959fb6ce494ce47b1e7c5c935e5043)
+
 # 1.0.1 (2016-12-24)
 ---
 
