@@ -1,3 +1,10 @@
+# 2.1.1 (2016-12-24)
+---
+
+## Bug Fixes
+
+- fix(tslint): return early to provide useful errors [6a496894](https://github.com/northbrookjs/typescript/commits/6a4968943a63abca92e1389c6ae38adf98934db3)
+
 # 2.1.0 (2016-12-24)
 ---
 
