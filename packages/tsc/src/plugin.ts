@@ -20,4 +20,9 @@ const tscDescription: Description =
 export const plugin: Command =
   command(alias('tsc'), tscDescription, directoryFlag);
 
-each(plugin, compilePackages).catch(err => console.error(err));
+each(plugin, compilePackages)
+  .catch(err => {
+    console.error(err);
+
+    process.exit(1);
+  });
