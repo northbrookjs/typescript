@@ -1,3 +1,10 @@
+# 2.1.4 (2016-12-24)
+---
+
+## Bug Fixes
+
+- fix(tslint): exit on error [4eb7c924](https://github.com/northbrookjs/typescript/commits/4eb7c924041c04572003e405199a4c7dd74726db)
+
 # 2.1.3 (2016-12-24)
 ---
 

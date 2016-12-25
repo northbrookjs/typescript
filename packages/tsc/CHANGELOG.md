@@ -1,3 +1,10 @@
+# 1.0.3 (2016-12-24)
+---
+
+## Bug Fixes
+
+- fix(tsc): exit on error [3c51f230](https://github.com/northbrookjs/typescript/commits/3c51f2300fbb86e6c82958b5ad0e049ff8d6516c)
+
 # 1.0.2 (2016-12-24)
 ---
 
