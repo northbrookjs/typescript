@@ -1,3 +1,10 @@
+# 1.0.4 (2017-01-03)
+---
+
+## Bug Fixes
+
+- fix(tsc): always create declaration files [107f3c37](https://github.com/northbrookjs/typescript/commits/107f3c379c5ea340b86b5f23664599f058301cde)
+
 # 1.0.3 (2016-12-24)
 ---
 
