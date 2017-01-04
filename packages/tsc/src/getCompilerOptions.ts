@@ -8,6 +8,7 @@ import { defaultCompilerOptions } from './defaultCompilerOptions';
 
 const ES2015_OPTIONS =
   {
+    declaration: true,
     moduleResolution: ts.ModuleResolutionKind.NodeJs,
     module: ts.ModuleKind.ES2015,
     target: ts.ScriptTarget.ES5,
@@ -15,6 +16,7 @@ const ES2015_OPTIONS =
 
 const COMMONJS_OPTIONS: ts.CompilerOptions =
   {
+    declaration: true,
     moduleResolution: ts.ModuleResolutionKind.NodeJs,
     module: ts.ModuleKind.CommonJS,
     target: ts.ScriptTarget.ES5,
