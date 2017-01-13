@@ -18,12 +18,13 @@
     "test": "northbrook mocha && northbrook tslint",
     "commit": "northbrook commit",
     "prerelease": "northbrook tsc",
-    "release": "northbrook release"
+    "release": "northbrook release",
+    "postinstall": "northbrook exec -- yarn"
   },
   "devDependencies": {
     "@motorcycle/tslint": "^1.3.0",
     "@northbrook/mocha": "^2.1.0",
-    "northbrook": "^4.3.4",
+    "northbrook": "^4.3.6",
     "tslint": "^4.2.0",
     "typescript": "^2.1.4"
   }
