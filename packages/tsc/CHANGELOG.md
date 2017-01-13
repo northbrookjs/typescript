@@ -1,3 +1,10 @@
+# 1.0.5 (2017-01-13)
+---
+
+## Bug Fixes
+
+- fix(tsc): tighten up default pattern matching [0d590686](https://github.com/northbrookjs/typescript/commits/0d5906869c8d72f21c3beca25d3d94fb9e32e440)
+
 # 1.0.4 (2017-01-03)
 ---
 
