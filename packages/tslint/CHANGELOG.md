@@ -1,3 +1,10 @@
+# 2.1.5 (2017-01-13)
+---
+
+## Bug Fixes
+
+- fix(tslint): tighten default pattern matching [149dcac4](https://github.com/northbrookjs/typescript/commits/149dcac42a6e4b0add3e553c8d056f8960dc4476)
+
 # 2.1.4 (2016-12-24)
 ---
 
