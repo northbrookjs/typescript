@@ -1,15 +1,17 @@
-import { EOL } from 'os';
-import { join } from 'path';
-import { readFileSync } from 'fs';
-import { Linter, LintResult } from 'tslint';
-import { loadConfigurationFromPath } from 'tslint/lib/configuration';
-import { EachHandlerOptions, Stdio } from 'northbrook';
-import { isFile } from 'northbrook/helpers';
 import * as expand from 'glob-expand';
+
+import { EachHandlerOptions, Stdio } from 'northbrook';
+import { LintResult, Linter } from 'tslint';
+
+import { EOL } from 'os';
+import { isFile } from 'northbrook/helpers';
+import { join } from 'path';
+import { loadConfigurationFromPath } from 'tslint/lib/configuration';
+import { readFileSync } from 'fs';
 
 const defaultPatterns: Array<RegExp | string> =
   [
-    /\.ts/,
+    /\.ts$/,
     '!lib/**/*.ts',
     '!lib.es2015/**/*.ts',
     '!**/*.skip.ts',
@@ -32,7 +34,10 @@ export function runLint (
     (config as any).tslint && (config as any).tslint.patterns || defaultPatterns;
 
   const filesToLint: Array<string> =
-    expand({ filter: 'isFile', cwd: path }, patterns.concat('!node_modules/**/*.*'));
+    expand({ filter: 'isFile', cwd: path }, patterns.concat([
+      '!node_modules/**/*.*',
+      '!**/node_modules/**.*',
+    ]));
 
   const linter = new Linter({ fix: false });
 
