@@ -1,3 +1,10 @@
+# 2.1.6 (2017-01-16)
+---
+
+## Bug Fixes
+
+- fix(tslint): handle errors more completely [95092ab2](https://github.com/northbrookjs/typescript/commits/95092ab29e40afeba99d3e65548793d9e9909ffc)
+
 # 2.1.5 (2017-01-13)
 ---
 
