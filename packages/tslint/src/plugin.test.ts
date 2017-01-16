@@ -30,12 +30,7 @@ describe('tslint plugin', function () {
     if (!plugin.handler) return done(new Error('No handler was found'));
 
     each(plugin, (input, io) => runLint(input, io).catch((x: any) => {
-      assert.strictEqual(x.stderr,
-        '\n/home/tylor/code/northbrook/typescript/packages/' +
-        'tslint/src/__test__/failing.skip.ts[2, 3]: ' +
-        'The class method \'foo\' must be marked either ' +
-        '\'private\', \'public\', or \'protected\'\n');
-
+      assert.ok(x.stderr.indexOf('packages/tslint/src/__test__/failing.skip.ts[2, 3]') > - 1);
       done();
     }));
 
