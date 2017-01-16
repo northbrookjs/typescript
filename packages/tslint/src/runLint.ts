@@ -59,12 +59,12 @@ export function runLint (
     if (result.failureCount > 0) {
       io.stderr.write(`Running TSLint for ${name} FAILED!` + EOL);
 
-      return reject(result);
+      return reject({ stdout: '', stderr: result.output });
     }
 
     io.stdout.write(`Running TSLint for ${name} complete.` + EOL);
 
-    resolve(result);
+    resolve({ stdout: '', stderr: '' });
   });
 }
 
