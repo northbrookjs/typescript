@@ -1,3 +1,11 @@
+# 2.1.7 (2017-01-16)
+---
+
+## Bug Fixes
+
+- fix(tslint): strengthen default patterns [5917496e](https://github.com/northbrookjs/typescript/commits/5917496e8e9295c955eabf66a53bafa6a8065083)
+- fix(typescript): update northbrook dependencies [f07acfbc](https://github.com/northbrookjs/typescript/commits/f07acfbc485387e49fa3fc326cad05a72653d6b1)
+
 # 2.1.6 (2017-01-16)
 ---
 
