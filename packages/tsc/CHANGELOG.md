@@ -1,3 +1,10 @@
+# 1.0.6 (2017-01-16)
+---
+
+## Bug Fixes
+
+- fix(tsc): Improve logging [c22bc02b](https://github.com/northbrookjs/typescript/commits/c22bc02b94447d7e6cd4d764608f45160c2968bf)
+
 # 1.0.5 (2017-01-13)
 ---
 
