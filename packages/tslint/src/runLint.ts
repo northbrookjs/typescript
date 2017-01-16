@@ -12,10 +12,10 @@ import { readFileSync } from 'fs';
 const defaultPatterns: Array<RegExp | string> =
   [
     'src/**/*.ts',
-    '!src/**/*.skip.ts',
     'test/**/*.ts',
-    '!test/**/*.skip.ts',
     'tests/**/*.ts',
+    '!src/**/*.skip.ts',
+    '!test/**/*.skip.ts',
     '!tests/**/*.skip.ts',
     '!lib/**/*.ts',
     '!lib.es2015/**/*.ts',
