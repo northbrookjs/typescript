@@ -8,7 +8,7 @@ import { getFilesToCompile } from './getFilesToCompile';
 import { compile } from './compile';
 
 export function compilePackages({ pkg, config, options }: EachHandlerOptions, io: Stdio) {
-  io.stdout.write(`Compiling ${pkg.name} `);
+  io.stdout.write(`Compiling ${pkg.name}... ` + EOL);
 
   const tsc = (config as any).tsc || {};
   const outDir = options.directory || tsc.directory || 'lib';
@@ -26,7 +26,7 @@ export function compilePackages({ pkg, config, options }: EachHandlerOptions, io
 
         compilerOptions.forEach(compile(filesToCompile));
 
-        io.stdout.write(`complete!` + EOL);
+        io.stdout.write(`Completed compilation of ${pkg.name}` + EOL);
 
         resolve();
       });
