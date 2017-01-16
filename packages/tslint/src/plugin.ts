@@ -1,5 +1,4 @@
 import { command, Command, alias, description, each } from 'northbrook';
-import { LintResult } from 'tslint';
 import { runLint } from './runLint';
 
 export const plugin: Command =
