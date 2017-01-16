@@ -11,10 +11,14 @@ import { readFileSync } from 'fs';
 
 const defaultPatterns: Array<RegExp | string> =
   [
-    /\.ts$/,
+    'src/**/*.ts',
+    '!src/**/*.skip.ts',
+    'test/**/*.ts',
+    '!test/**/*.skip.ts',
+    'tests/**/*.ts',
+    '!tests/**/*.skip.ts',
     '!lib/**/*.ts',
     '!lib.es2015/**/*.ts',
-    '!**/*.skip.ts',
   ];
 
 export function runLint (
