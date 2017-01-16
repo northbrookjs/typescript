@@ -1,3 +1,10 @@
+# 1.0.7 (2017-01-16)
+---
+
+## Bug Fixes
+
+- fix(typescript): update northbrook dependencies [f07acfbc](https://github.com/northbrookjs/typescript/commits/f07acfbc485387e49fa3fc326cad05a72653d6b1)
+
 # 1.0.6 (2017-01-16)
 ---
 
