@@ -34,6 +34,12 @@ describe('tslint plugin', function () {
       done();
     }));
 
-    plugin.handler({ config, args, options, directory: packageDir }, defaultStdio);
+    plugin.handler({
+      config,
+      args,
+      options,
+      directory: packageDir,
+      depGraph: {} as any,
+    }, defaultStdio);
   });
 });
