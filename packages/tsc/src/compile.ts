@@ -1,6 +1,6 @@
 import * as ts from 'typescript';
 
-export function compile (filesToCompile: Array<string>) {
+export function compile (filesToCompile: Array<string>, reject: Function) {
   return function (compilerOptions: ts.CompilerOptions) {
     const program = ts.createProgram(filesToCompile, compilerOptions);
 
@@ -11,6 +11,9 @@ export function compile (filesToCompile: Array<string>) {
         ...ts.getPreEmitDiagnostics(program),
         ...emitResult.diagnostics,
       ];
+
+    if (diagnostics.length > 0)
+      reject();
 
     reportDiagnostics(diagnostics);
   };
@@ -27,6 +30,6 @@ function reportDiagnostics(diagnostics: ts.Diagnostic[]): void {
 
     message += ': ' + ts.flattenDiagnosticMessageText(diagnostic.messageText, '\n');
 
-    console.log(message);
+    console.error(message);
   });
 }

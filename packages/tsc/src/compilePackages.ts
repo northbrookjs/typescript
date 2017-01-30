@@ -24,7 +24,7 @@ export function compilePackages({ pkg, config, options }: EachHandlerOptions, io
 
         const filesToCompile = getFilesToCompile(pkg.path, config);
 
-        compilerOptions.forEach(compile(filesToCompile));
+        compilerOptions.forEach(compile(filesToCompile, reject));
 
         io.stdout.write(`Completed compilation of ${pkg.name}` + EOL);
 
