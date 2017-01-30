@@ -1,3 +1,10 @@
+# 2.1.8 (2017-01-30)
+---
+
+## Bug Fixes
+
+- fix(tslint): update dependencies [3e6e8d7b](https://github.com/northbrookjs/typescript/commits/3e6e8d7ba1b4178c3b9a10e57c49d318b7e4bb7c)
+
 # 2.1.7 (2017-01-16)
 ---
 
