@@ -1,3 +1,10 @@
+# 1.0.8 (2017-01-30)
+---
+
+## Bug Fixes
+
+- fix(tsc): fail on errors [8f7b265c](https://github.com/northbrookjs/typescript/commits/8f7b265cbca7639a021ea23859fa3bd0f4af79c6)
+
 # 1.0.7 (2017-01-16)
 ---
 
